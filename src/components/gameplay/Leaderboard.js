@@ -1,22 +1,29 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 
 
 export const Leaderboard = () => {
-    const roundId = useParams()
-    console.log("leaderboard")
+    const params = useParams()
+    let history = useHistory()
 
+
+    const next = () => {
+        history.push(`/elimination/${parseInt(params.roundId)}`)
+    }
     return (
         <>
-        <h1>Leaderboard for Round:{parseInt(roundId.roundId)}</h1>
-        <table>
-            <thead>
-            <th>Player</th>
-            <th>Correctly Answered</th>
-            <th>Total</th>
-            <th>Amount Banked</th>
-            </thead>
-        </table>
+            <h1>Leaderboard for Round {parseInt(params.roundId)}</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Player |</td>
+                        <td>Correctly Answered |</td>
+                        <td>Total |</td>
+                        <td>Amount Banked |</td>
+                    </tr>
+                </thead>
+            </table>
+            <button onClick={next}>NEXT</button>
         </>
     )
 }

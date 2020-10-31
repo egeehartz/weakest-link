@@ -5,6 +5,8 @@ import { PlayerProvider } from "./providers/PlayerProvider"
 import { PlayerForm } from "./gameplay/PlayerForm"
 import { StartingPage } from "./gameplay/StartingPage"
 import { Leaderboard } from "./gameplay/Leaderboard"
+import { Elimination } from "./gameplay/Elimination"
+import { FinalRound } from "./gameplay/FinalRound"
 
 
 export const AppViews = () => (
@@ -19,15 +21,15 @@ export const AppViews = () => (
         <Route path="/gameplay/:roundId(\d+)/:playerId(\d+)">
             <GamePlay />
         </Route>
-        <Route path="/leaderboard/:roundId(\+d)">
+        <Route path="/leaderboard/:roundId(\d+)">
             <Leaderboard />
         </Route>
-        {/* <Route path="/elimination/:roundId(\+d)">
+        <Route path="/elimination/:roundId(\d+)">
             <Elimination />
         </Route>
-        <Route path="/gameplay/final">
+        <Route path="/final">
             <FinalRound />
-        </Route> */}
+        </Route>
     </PlayerProvider>
     </>
 )

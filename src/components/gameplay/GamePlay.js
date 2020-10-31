@@ -25,27 +25,16 @@ export const GamePlay = () => {
             setFilteredPlayers(filtered)
     },[players])
 
-    useEffect(() => {
-            const nextId = fPlayers.find(fu => fu.id > currentPlayer.id)
-            console.log(nextId, "useEffect")
-            if(nextId === undefined){
-                const IDs = fPlayers.map(fp => fp.id)
-                const nextPlayerId = Math.min(...IDs)
-                const nextPlayer = fPlayers.find(fp => fp.id === nextPlayerId)
-                setNextPlayer(nextPlayer)
-            } 
-            else {
-                setNextPlayer(nextId)
-            }
-    },[params.playerId])
-
-    //console.log(fPlayers.length)
-    console.log(nextPlayer)
-   // console.log(params)
-    
-
     const next = () => {
-        history.push(`/gameplay/${parseInt(params.roundId)}/${parseInt(nextPlayer.id)}`)
+        const nextId = fPlayers.find(fu => fu.id > currentPlayer.id)
+        if(nextId === undefined){
+            const IDs = fPlayers.map(fp => fp.id)
+            const nextPlayerId = Math.min(...IDs)
+            history.push(`/gameplay/${parseInt(params.roundId)}/${parseInt(nextPlayerId)}`)
+        } 
+        else {
+            history.push(`/gameplay/${parseInt(params.roundId)}/${parseInt(nextId.id)}`)
+        }
     }
     const endingNext = () => {
         history.push(`/leaderboard/${parseInt(params.roundId)}`)
