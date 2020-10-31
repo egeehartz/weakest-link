@@ -1,0 +1,86 @@
+{
+    "players": [
+        {
+            "id": 1,
+            "name": "Jane",
+            "eliminated": false
+        },
+        {
+            "id": 2,
+            "name": "Bob",
+            "eliminated": true
+        },
+        {
+            "id": 3,
+            "name": "Lexi",
+            "eliminated": false
+        },
+        {
+            "id": 4,
+            "name": "Alec",
+            "eliminated": false
+        },
+        {
+            "id": 5,
+            "name": "Lucy",
+            "eliminated": false
+        },
+        {
+            "id": 6,
+            "name": "Joel",
+            "eliminated": false
+        },
+        {
+            "id": 7,
+            "name": "Retta",
+            "eliminated": false
+        },
+        {
+            "id": 8,
+            "name": "Jeremiah",
+            "eliminated": false
+        }
+    ],
+    "chain": [
+        {
+            "id": 1,
+            "round": 1,
+            "amt": 1000
+        },
+        {
+            "id": 2,
+            "round": 1,
+            "amt": 1000
+        },
+        {
+            "id": 3,
+            "round": 1,
+            "amt": 1000
+        },
+        {
+            "id": 4,
+            "round": 1,
+            "amt": 1000
+        },
+        {
+            "id": 5,
+            "round": 1,
+            "amt": 1000
+        },
+        {
+            "id": 6,
+            "round": 1,
+            "amt": 1000
+        },
+        {
+            "id": 7,
+            "round": 1,
+            "amt": 1000
+        },
+        {
+            "id": 8,
+            "round": 1,
+            "amt": 1000
+        }
+    ]
+}
