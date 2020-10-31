@@ -5,10 +5,13 @@ import { PlayerContext } from "../providers/PlayerProvider"
 
 
 export const GamePlay = () => {
-    const playerId = useParams()
-    const roundId = useParams()
+    const params = useParams()
+    //const roundId = useParams()
     let history = useHistory()
     const {players, getPlayers} = useContext(PlayerContext)
+    //const [player, setPlayer] = useState({})
+
+    const currentPlayer = players.find(p => p.id === parseInt(params.playerId))
 
     const [fPlayers, setFilteredPlayers] = useState([])
     const [nextPlayer, setNextPlayer] = useState({})
@@ -18,38 +21,42 @@ export const GamePlay = () => {
     },[])
 
     useEffect(() => {
-        if(roundId.roundId > 1){
-            const filtered = players.filter(u =>{
-                console.log(u, "u")
-                return u.eliminated === false
-            })
+            const filtered = players.filter(u => u.eliminated === false)
             setFilteredPlayers(filtered)
-        }
     },[players])
 
     useEffect(() => {
-        if(fPlayers.length < 8){
-            const nextId = fPlayers.find(fu =>{
-                console.log(fu)
-              return fu.id > playerId.playerId
-            })
-            setNextPlayer(nextId)   
-        }
-    },[fPlayers])
+            const nextId = fPlayers.find(fu => fu.id > currentPlayer.id)
+            console.log(nextId, "useEffect")
+            if(nextId === undefined){
+                const IDs = fPlayers.map(fp => fp.id)
+                const nextPlayerId = Math.min(...IDs)
+                const nextPlayer = fPlayers.find(fp => fp.id === nextPlayerId)
+                setNextPlayer(nextPlayer)
+            } 
+            else {
+                setNextPlayer(nextId)
+            }
+    },[params.playerId])
 
-    console.log(fPlayers.length)
+    //console.log(fPlayers.length)
     console.log(nextPlayer)
+   // console.log(params)
     
 
     const next = () => {
-        history.push(`/gameplay/${parseInt(roundId.roundId)}/${parseInt(playerId.playerId) + 1}`)
+        history.push(`/gameplay/${parseInt(params.roundId)}/${parseInt(nextPlayer.id)}`)
+    }
+    const endingNext = () => {
+        history.push(`/leaderboard/${parseInt(params.roundId)}`)
     }
 
     return (
         <>
-        <h1>Round: {roundId.roundId}</h1>
-        <p>Player: {playerId.playerId}</p>
+        <h1>Round: {params.roundId}</h1>
+        <p>Player: {currentPlayer.name}</p>
         <button onClick={next}>click meeeee</button>
+        <button onClick={endingNext}>end round</button>
         </>
     )
 }
