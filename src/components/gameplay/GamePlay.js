@@ -1,20 +1,16 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { PlayerContext } from "../providers/PlayerProvider"
+import "../css/GamePlay.css"
 
 
 
 export const GamePlay = () => {
     const params = useParams()
-    //const roundId = useParams()
     let history = useHistory()
     const {players, getPlayers} = useContext(PlayerContext)
-    //const [player, setPlayer] = useState({})
-
     const currentPlayer = players.find(p => p.id === parseInt(params.playerId))
-
     const [fPlayers, setFilteredPlayers] = useState([])
-    const [nextPlayer, setNextPlayer] = useState({})
 
     useEffect(() => {
         getPlayers()
@@ -44,7 +40,9 @@ export const GamePlay = () => {
         <>
         <h1>Round: {params.roundId}</h1>
         <p>Player: {currentPlayer.name}</p>
-        <button onClick={next}>click meeeee</button>
+        <button onClick={next}>CORRECT</button>
+        <button onClick={next}>incorrect</button>
+        <button>BANK</button>
         <button onClick={endingNext}>end round</button>
         </>
     )
