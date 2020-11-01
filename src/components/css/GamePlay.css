@@ -1,0 +1,45 @@
+h1, h4 {
+    text-align: center;
+}
+
+.mainContent {
+    display: flex;
+}
+
+.gameplay {
+    display: flex;
+    flex-direction: column;
+    border: 1px dotted black;
+    margin: 0 4rem;
+    flex: 3;
+}
+
+.chain {
+    flex: 1;
+}
+.chainColumn {
+    display: flex;
+}
+.chainColumn > p {
+    margin: 1rem;
+}
+
+.answerButtons {
+    align-self: center;
+}
+
+.answerButtons > button {
+    align-self: center;
+    margin: 1.5rem;
+}
+
+.bankButton {
+    align-self: center;
+    margin: 2rem 0
+}
+
+.endRound {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0
+}

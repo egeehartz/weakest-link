@@ -26,7 +26,9 @@ export const Elimination = () => {
         if(parseInt(params.roundId) === 6) {
             history.push("/final")
         } else {
-            history.push(`/gameplay/${parseInt(params.roundId) + 1}/1`)
+            history.push({
+                pathname: `/gameplay/${parseInt(params.roundId) + 1}/1`
+            })
         }
     }
 

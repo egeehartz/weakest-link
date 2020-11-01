@@ -41,46 +41,294 @@
       "eliminated": false
     }
   ],
-  "chain": [
+  "chains": [
     {
       "id": 1,
       "round": 1,
-      "amt": 1000
+      "amt": 1000,
+      "step": 1
     },
     {
       "id": 2,
       "round": 1,
-      "amt": 1000
+      "amt": 2000,
+      "step": 2
     },
     {
       "id": 3,
       "round": 1,
-      "amt": 1000
+      "amt": 3000,
+      "step": 3
     },
     {
       "id": 4,
       "round": 1,
-      "amt": 1000
+      "amt": 4000,
+      "step": 4
     },
     {
       "id": 5,
       "round": 1,
-      "amt": 1000
+      "amt": 5000,
+      "step": 5
     },
     {
       "id": 6,
       "round": 1,
-      "amt": 1000
+      "amt": 7500,
+      "step": 6
     },
     {
       "id": 7,
       "round": 1,
-      "amt": 1000
+      "amt": 10000,
+      "step": 7
     },
     {
       "id": 8,
       "round": 1,
-      "amt": 1000
+      "amt": 25000,
+      "step": 8
+    },
+    {
+      "id": 9,
+      "round": 2,
+      "amt": 1000,
+      "step": 1
+    },
+    {
+      "id": 10,
+      "round": 2,
+      "amt": 2500,
+      "step": 2
+    },
+    {
+      "id": 11,
+      "round": 2,
+      "amt": 5000,
+      "step": 3
+    },
+    {
+      "id": 12,
+      "round": 2,
+      "amt": 7500,
+      "step": 4
+    },
+    {
+      "id": 13,
+      "round": 2,
+      "amt": 10000,
+      "step": 5
+    },
+    {
+      "id": 14,
+      "round": 2,
+      "amt": 15000,
+      "step": 6
+    },
+    {
+      "id": 15,
+      "round": 2,
+      "amt": 25000,
+      "step": 7
+    },
+    {
+      "id": 16,
+      "round": 2,
+      "amt": 50000,
+      "step": 8
+    },
+    {
+      "id": 17,
+      "round": 3,
+      "amt": 1000,
+      "step": 1
+    },
+    {
+      "id": 18,
+      "round": 3,
+      "amt": 2500,
+      "step": 2
+    },
+    {
+      "id": 19,
+      "round": 3,
+      "amt": 5000,
+      "step": 3
+    },
+    {
+      "id": 20,
+      "round": 3,
+      "amt": 7500,
+      "step": 4
+    },
+    {
+      "id": 21,
+      "round": 3,
+      "amt": 10000,
+      "step": 5
+    },
+    {
+      "id": 22,
+      "round": 3,
+      "amt": 25000,
+      "step": 6
+    },
+    {
+      "id": 23,
+      "round": 3,
+      "amt": 50000,
+      "step": 7
+    },
+    {
+      "id": 24,
+      "round": 3,
+      "amt": 75000,
+      "step": 8
+    },
+    {
+      "id": 25,
+      "round": 4,
+      "amt": 2500,
+      "step": 1
+    },
+    {
+      "id": 26,
+      "round": 4,
+      "amt": 5000,
+      "step": 2
+    },
+    {
+      "id": 27,
+      "round": 4,
+      "amt": 7500,
+      "step": 3
+    },
+    {
+      "id": 28,
+      "round": 4,
+      "amt": 10000,
+      "step": 4
+    },
+    {
+      "id": 29,
+      "round": 4,
+      "amt": 25000,
+      "step": 5
+    },
+    {
+      "id": 30,
+      "round": 4,
+      "amt": 50000,
+      "step": 6
+    },
+    {
+      "id": 31,
+      "round": 4,
+      "amt": 75000,
+      "step": 7
+    },
+    {
+      "id": 32,
+      "round": 4,
+      "amt": 100000,
+      "step": 8
+    },
+    {
+      "id": 33,
+      "round": 5,
+      "amt": 2500,
+      "step": 1
+    },
+    {
+      "id": 34,
+      "round": 5,
+      "amt": 5000,
+      "step": 2
+    },
+    {
+      "id": 35,
+      "round": 5,
+      "amt": 10000,
+      "step": 3
+    },
+    {
+      "id": 36,
+      "round": 5,
+      "amt": 25000,
+      "step": 4
+    },
+    {
+      "id": 37,
+      "round": 5,
+      "amt": 50000,
+      "step": 5
+    },
+    {
+      "id": 38,
+      "round": 5,
+      "amt": 75000,
+      "step": 6
+    },
+    {
+      "id": 39,
+      "round": 5,
+      "amt": 100000,
+      "step": 7
+    },
+    {
+      "id": 40,
+      "round": 5,
+      "amt": 250000,
+      "step": 8
+    },
+    {
+      "id": 41,
+      "round": 6,
+      "amt": 2500,
+      "step": 1
+    },
+    {
+      "id": 42,
+      "round": 6,
+      "amt": 5000,
+      "step": 2
+    },
+    {
+      "id": 43,
+      "round": 6,
+      "amt": 10000,
+      "step": 3
+    },
+    {
+      "id": 44,
+      "round": 6,
+      "amt": 25000,
+      "step": 4
+    },
+    {
+      "id": 45,
+      "round": 6,
+      "amt": 50000,
+      "step": 5
+    },
+    {
+      "id": 46,
+      "round": 6,
+      "amt": 150000,
+      "step": 6
+    },
+    {
+      "id": 47,
+      "round": 6,
+      "amt": 250000,
+      "step": 7
+    },
+    {
+      "id": 48,
+      "round": 6,
+      "amt": 500000,
+      "step": 8
     }
   ]
 }
