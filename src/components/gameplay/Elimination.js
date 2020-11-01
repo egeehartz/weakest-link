@@ -7,7 +7,7 @@ import {PlayerContext} from "../providers/PlayerProvider"
 export const Elimination = () => {
     let history = useHistory()
     const params = useParams()
-    const { players, getPlayers } = useContext(PlayerContext)
+    const { players, getPlayers, voteOffPlayer } = useContext(PlayerContext)
 
     const [fPlayers, setFilteredPlayers] = useState([])
 
@@ -20,7 +20,6 @@ export const Elimination = () => {
         setFilteredPlayers(filtered)
     }, [players])
 
-    //TODO onClick={editPlayer}
 
     const next = () => {
         //TODO find nextPlayer based on Strongest Link status
@@ -38,7 +37,9 @@ export const Elimination = () => {
             {
                 fPlayers.map(fp => {
                     return <div>
-                        <button onClick={next}>
+                        <button onClick={()=> {
+                            voteOffPlayer(fp.id)
+                            next()}}>
                             {fp.name}
                         </button>
                     </div>
