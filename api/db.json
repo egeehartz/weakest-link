@@ -23,7 +23,7 @@
     {
       "id": 5,
       "name": "Lucy",
-      "eliminated": true
+      "eliminated": false
     },
     {
       "id": 6,
@@ -38,7 +38,7 @@
     {
       "id": 8,
       "name": "Jeremiah",
-      "eliminated": false
+      "eliminated": true
     }
   ],
   "chains": [
@@ -329,6 +329,44 @@
       "round": 6,
       "amt": 500000,
       "step": 8
+    }
+  ],
+  "playerBanks": [
+    {
+      "amount": 4000,
+      "player_id": 4,
+      "round_id": 1,
+      "id": 1
+    },
+    {
+      "amount": 2000,
+      "player_id": 5,
+      "round_id": 1,
+      "id": 2
+    },
+    {
+      "amount": 7500,
+      "player_id": 2,
+      "round_id": 1,
+      "id": 3
+    },
+    {
+      "amount": 5000,
+      "player_id": 3,
+      "round_id": 2,
+      "id": 4
+    },
+    {
+      "amount": 10000,
+      "player_id": 7,
+      "round_id": 2,
+      "id": 5
+    },
+    {
+      "amount": 2500,
+      "player_id": 1,
+      "round_id": 2,
+      "id": 6
     }
   ]
 }

@@ -3,6 +3,7 @@ import { useHistory, useLocation, useParams } from "react-router-dom"
 import { PlayerContext } from "../providers/PlayerProvider"
 import "../css/GamePlay.css"
 import { ChainContext } from "../providers/ChainProvider"
+import { PlayerBankContext } from "../providers/PlayerBankProvider"
 
 
 
@@ -11,6 +12,7 @@ export const GamePlay = () => {
     let history = useHistory()
     const { players, getPlayers } = useContext(PlayerContext)
     const {chains, getChains} = useContext(ChainContext)
+    const {addPlayerBank} = useContext(PlayerBankContext)
     const currentPlayer = players.find(p => p.id === parseInt(params.playerId))
     const [fPlayers, setFilteredPlayers] = useState([])
     const [currentChain, setCurrentChain] = useState([])
@@ -116,6 +118,11 @@ export const GamePlay = () => {
         const amountObj = currentChain.find(c => c.step === bankCounter)
         setBankAmount(bankedAmount += amountObj.amt)
         setBankCounter(1)
+        addPlayerBank({
+            amount: amountObj.amt,
+            player_id: parseInt(params.playerId),
+            round_id: parseInt(params.roundId)
+        })
     }
 
     return (

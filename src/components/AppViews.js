@@ -8,12 +8,14 @@ import { Leaderboard } from "./gameplay/Leaderboard"
 import { Elimination } from "./gameplay/Elimination"
 import { FinalRound } from "./gameplay/FinalRound"
 import { ChainProvider } from "./providers/ChainProvider"
+import { PlayerBankProvider } from "./providers/PlayerBankProvider"
 
 
 export const AppViews = () => (
     <>
         <PlayerProvider>
             <ChainProvider>
+                <PlayerBankProvider>
                 <Route exact path='/'>
                     <PlayerForm />
                 </Route>
@@ -32,6 +34,7 @@ export const AppViews = () => (
                 <Route path="/final">
                     <FinalRound />
                 </Route>
+                </PlayerBankProvider>
             </ChainProvider>
         </PlayerProvider>
     </>
