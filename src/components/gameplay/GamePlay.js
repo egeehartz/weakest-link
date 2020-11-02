@@ -115,7 +115,7 @@ export const GamePlay = () => {
 
 
     const bankMoney = () => {
-        const amountObj = currentChain.find(c => c.step === bankCounter)
+        const amountObj = currentChain.find(c => c.step === (bankCounter - 1))
         setBankAmount(bankedAmount += amountObj.amt)
         setBankCounter(1)
         addPlayerBank({
@@ -156,6 +156,7 @@ export const GamePlay = () => {
                                     </div>
                             }).reverse()
                         }
+                        <p>Bank: ${bankedAmount}</p>
             </div>
             </div>
                 <div className="endRound">

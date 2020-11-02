@@ -21,13 +21,13 @@ export const Elimination = () => {
     }, [players])
 
 
-    const next = () => {
+    const next = (nextPlayerId) => {
         //TODO find nextPlayer based on Strongest Link status
         if(parseInt(params.roundId) === 6) {
             history.push("/final")
         } else {
             history.push({
-                pathname: `/gameplay/${parseInt(params.roundId) + 1}/1`
+                pathname: `/gameplay/${parseInt(params.roundId) + 1}/${nextPlayerId}`
             })
         }
     }
@@ -35,18 +35,33 @@ export const Elimination = () => {
     return (
         <>
             <h1>End of Round {parseInt(params.roundId)}</h1>
+            <div>
             <h2>Who is the Weakest Link?</h2>
             {
                 fPlayers.map(fp => {
                     return <div>
                         <button onClick={()=> {
-                            voteOffPlayer(fp.id)
-                            next()}}>
+                            voteOffPlayer(fp.id)}}>
                             {fp.name}
                         </button>
                     </div>
                 })
             }
+            </div>
+            <div>
+                <h2>Strongest Link (to start next round)</h2>
+                {
+                fPlayers.map(fp => {
+                    return <div>
+                        <button onClick={()=> {
+                            next(fp.id)}}>
+                            {fp.name}
+                        </button>
+                    </div>
+                })
+            }
+            </div>
+
         </>
     )
 }

@@ -2,42 +2,42 @@
   "players": [
     {
       "id": 1,
-      "name": "Jane",
-      "eliminated": false
+      "name": "Michelle",
+      "eliminated": true
     },
     {
       "id": 2,
-      "name": "Bob",
-      "eliminated": false
+      "name": "Evan",
+      "eliminated": true
     },
     {
       "id": 3,
-      "name": "Lexi",
-      "eliminated": false
+      "name": "Prem",
+      "eliminated": true
     },
     {
       "id": 4,
-      "name": "Alec",
-      "eliminated": false
+      "name": "Shreya",
+      "eliminated": true
     },
     {
       "id": 5,
-      "name": "Lucy",
-      "eliminated": false
+      "name": "Vincent",
+      "eliminated": true
     },
     {
       "id": 6,
-      "name": "Joel",
+      "name": "Tiffany",
       "eliminated": false
     },
     {
       "id": 7,
-      "name": "Retta",
+      "name": "John",
       "eliminated": false
     },
     {
       "id": 8,
-      "name": "Jeremiah",
+      "name": "Eliana",
       "eliminated": true
     }
   ],
@@ -333,40 +333,22 @@
   ],
   "playerBanks": [
     {
-      "amount": 4000,
-      "player_id": 4,
-      "round_id": 1,
+      "amount": 5000,
+      "player_id": 7,
+      "round_id": 6,
       "id": 1
     },
     {
-      "amount": 2000,
-      "player_id": 5,
-      "round_id": 1,
+      "amount": 2500,
+      "player_id": 7,
+      "round_id": 6,
       "id": 2
     },
     {
-      "amount": 7500,
-      "player_id": 2,
-      "round_id": 1,
-      "id": 3
-    },
-    {
-      "amount": 5000,
-      "player_id": 3,
-      "round_id": 2,
-      "id": 4
-    },
-    {
-      "amount": 10000,
-      "player_id": 7,
-      "round_id": 2,
-      "id": 5
-    },
-    {
       "amount": 2500,
-      "player_id": 1,
-      "round_id": 2,
-      "id": 6
+      "player_id": 8,
+      "round_id": 6,
+      "id": 3
     }
   ]
 }

@@ -13,32 +13,89 @@ export const Leaderboard = () => {
 
     const [correctArr, wrongArr, banked ] = location.state
     let [totalBanked, setTotal] = useState(0)
+    let [roundTotalBanked1, setRoundTotal1] = useState(0)
+    let [roundTotalBanked2, setRoundTotal2] = useState(0)
+    let [roundTotalBanked3, setRoundTotal3] = useState(0)
+    let [roundTotalBanked4, setRoundTotal4] = useState(0)
+    let [roundTotalBanked5, setRoundTotal5] = useState(0)
+    let [roundTotalBanked6, setRoundTotal6] = useState(0)
+    let [roundTotalBanked7, setRoundTotal7] = useState(0)
+    let [roundTotalBanked8, setRoundTotal8] = useState(0)
 
-    const bankedObj1 = playerBanks.find(pb => pb.player_id === players[0].id) || {}
-    const bankedObj2 = playerBanks.find(pb => pb.player_id === players[1].id) || {}
-    const bankedObj3 = playerBanks.find(pb => pb.player_id === players[2].id) || {}
-    const bankedObj4 = playerBanks.find(pb => pb.player_id === players[3].id) || {}
-    const bankedObj5 = playerBanks.find(pb => pb.player_id === players[4].id) || {}
-    const bankedObj6 = playerBanks.find(pb => pb.player_id === players[5].id) || {}
-    const bankedObj7 = playerBanks.find(pb => pb.player_id === players[6].id) || {}
-    const bankedObj8 = playerBanks.find(pb => pb.player_id === players[7].id) || {}
-
+    
     useEffect(() => {
         getPlayers()
         getPlayerBanks()
     },[])
-   
+    
     const next = () => {
         history.push({
             pathname: `/elimination/${parseInt(params.roundId)}`
         })
     }
-
+    
     useEffect(() => {
         let amount = 0
         playerBanks.forEach(pb => amount += pb.amount)
         setTotal(amount)
+    },[playerBanks])
+    
+    useEffect(() => {
+        const bankedArr1 = playerBanks.filter(pb => pb.player_id === players[0].id && pb.round_id === parseInt(params.roundId))
+        let amount = 0
+        bankedArr1.forEach(pb => amount += pb.amount)
+        setRoundTotal1(amount)
     },[])
+    
+    useEffect(() => {
+        const bankedArr2 = playerBanks.filter(pb => pb.player_id === players[1].id && pb.round_id === parseInt(params.roundId)) 
+        let amount = 0
+        bankedArr2.forEach(pb => amount += pb.amount)
+        setRoundTotal2(amount)
+    },[])
+    
+    useEffect(() => {
+        const bankedArr3 = playerBanks.filter(pb => pb.player_id === players[2].id && pb.round_id === parseInt(params.roundId)) 
+        let amount = 0
+        bankedArr3.forEach(pb => amount += pb.amount)
+        setRoundTotal3(amount)
+    },[])
+
+    useEffect(() => {
+        let amount = 0
+        const bankedArr4 = playerBanks.filter(pb => pb.player_id === players[3].id && pb.round_id === parseInt(params.roundId)) 
+        bankedArr4.forEach(pb => amount += pb.amount)
+        setRoundTotal4(amount)
+    },[])
+
+    useEffect(() => {
+        let amount = 0
+        const bankedArr5 = playerBanks.filter(pb => pb.player_id === players[4].id && pb.round_id === parseInt(params.roundId)) 
+        bankedArr5.forEach(pb => amount += pb.amount)
+        setRoundTotal5(amount)
+    },[])
+
+    useEffect(() => {
+        let amount = 0
+        const bankedArr6 = playerBanks.filter(pb => pb.player_id === players[5].id && pb.round_id === parseInt(params.roundId)) 
+        bankedArr6.forEach(pb => amount += pb.amount)
+        setRoundTotal6(amount)
+    },[])
+
+    useEffect(() => {
+        let amount = 0
+        const bankedArr7 = playerBanks.filter(pb => pb.player_id === players[6].id && pb.round_id === parseInt(params.roundId)) 
+        bankedArr7.forEach(pb => amount += pb.amount)
+        setRoundTotal7(amount)
+    },[])
+
+    useEffect(() => {
+        let amount = 0
+        const bankedArr8 = playerBanks.filter(pb => pb.player_id === players[7].id && pb.round_id === parseInt(params.roundId)) 
+        bankedArr8.forEach(pb => amount += pb.amount)
+        setRoundTotal8(amount)
+    },[])
+
 
     return (
         <>
@@ -61,49 +118,49 @@ export const Leaderboard = () => {
                         <td>{players[0].name}</td>
                         <td>{correctArr[0]}</td>
                         <td>{correctArr[0] + wrongArr[0]}</td>
-                        <td>{bankedObj1.hasOwnProperty("amount") ? <p>${bankedObj1.amount}</p> : "$0"}</td>
+                        <td>{roundTotalBanked1 !== 0 ? <p>${roundTotalBanked1}</p> : "$0"}</td>
                     </tr>
                     <tr hidden={players[1].eliminated === true}> 
                         <td>{players[1].name}</td>
                         <td>{correctArr[1]}</td>
                         <td>{correctArr[1] + wrongArr[1]}</td>
-                        <td>{bankedObj2.hasOwnProperty("amount") ? <p>${bankedObj2.amount}</p> : "$0"}</td>
+                        <td>{roundTotalBanked2 !== 0 ? <p>${roundTotalBanked2}</p> : "$0"}</td>
                     </tr>
                     <tr hidden={players[2].eliminated === true}> 
                         <td>{players[2].name}</td>
                         <td>{correctArr[2]}</td>
                         <td>{correctArr[2] + wrongArr[2]}</td>
-                        <td>{bankedObj3.hasOwnProperty("amount") ? <p>${bankedObj3.amount}</p> : "$0"}</td>
+                        <td>{roundTotalBanked3 !== 0 ? <p>${roundTotalBanked3}</p> : "$0"}</td>
                     </tr>
                     <tr hidden={players[3].eliminated === true}> 
                         <td>{players[3].name}</td>
                         <td>{correctArr[3]}</td>
                         <td>{correctArr[3] + wrongArr[3]}</td>
-                        <td>{bankedObj4.hasOwnProperty("amount") ? <p>${bankedObj4.amount}</p> : "$0"}</td>
+                        <td>{roundTotalBanked4 !== 0 ? <p>${roundTotalBanked4}</p> : "$0"}</td>
                     </tr>
                     <tr hidden={players[4].eliminated === true}> 
                         <td>{players[4].name}</td>
                         <td>{correctArr[4]}</td>
                         <td>{correctArr[4] + wrongArr[4]}</td>
-                        <td>{bankedObj5.hasOwnProperty("amount") ? <p>${bankedObj5.amount}</p> : "$0"}</td>
+                        <td>{roundTotalBanked5 !== 0 ? <p>${roundTotalBanked5}</p> : "$0"}</td>
                     </tr>
                     <tr hidden={players[5].eliminated === true}> 
                         <td>{players[5].name}</td>
                         <td>{correctArr[5]}</td>
                         <td>{correctArr[5] + wrongArr[5]}</td>
-                        <td>{bankedObj6.hasOwnProperty("amount") ? <p>${bankedObj6.amount}</p> : "$0"}</td>
+                        <td>{roundTotalBanked6 !== 0 ? <p>${roundTotalBanked6}</p> : "$0"}</td>
                     </tr>
                     <tr hidden={players[6].eliminated === true}> 
                         <td>{players[6].name}</td>
                         <td>{correctArr[6]}</td>
                         <td>{correctArr[6] + wrongArr[6]}</td>
-                        <td>{bankedObj7.hasOwnProperty("amount") ? <p>${bankedObj7.amount}</p> : "$0"}</td>
+                        <td>{roundTotalBanked7 !== 0 ? <p>${roundTotalBanked7}</p> : "$0"}</td>
                     </tr>
                     <tr hidden={players[7].eliminated === true}> 
                         <td>{players[7].name}</td>
                         <td>{correctArr[7]}</td>
                         <td>{correctArr[7] + wrongArr[7]}</td>
-                        <td>{bankedObj8.hasOwnProperty("amount") ? <p>${bankedObj8.amount}</p> : "$0"}</td>
+                        <td>{roundTotalBanked8 !== 0 ? <p>${roundTotalBanked8}</p> : "$0"}</td>
                     </tr>
                     </>
                 </tbody>
