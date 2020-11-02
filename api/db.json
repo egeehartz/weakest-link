@@ -3,27 +3,27 @@
     {
       "id": 1,
       "name": "Michelle",
-      "eliminated": true
+      "eliminated": false
     },
     {
       "id": 2,
       "name": "Evan",
-      "eliminated": true
+      "eliminated": false
     },
     {
       "id": 3,
       "name": "Prem",
-      "eliminated": true
+      "eliminated": false
     },
     {
       "id": 4,
       "name": "Shreya",
-      "eliminated": true
+      "eliminated": false
     },
     {
       "id": 5,
       "name": "Vincent",
-      "eliminated": true
+      "eliminated": false
     },
     {
       "id": 6,
@@ -38,7 +38,7 @@
     {
       "id": 8,
       "name": "Eliana",
-      "eliminated": true
+      "eliminated": false
     }
   ],
   "chains": [
@@ -333,21 +333,21 @@
   ],
   "playerBanks": [
     {
-      "amount": 5000,
-      "player_id": 7,
-      "round_id": 6,
+      "amount": 3000,
+      "player_id": 4,
+      "round_id": 1,
       "id": 1
     },
     {
-      "amount": 2500,
-      "player_id": 7,
-      "round_id": 6,
+      "amount": 1000,
+      "player_id": 1,
+      "round_id": 1,
       "id": 2
     },
     {
-      "amount": 2500,
-      "player_id": 8,
-      "round_id": 6,
+      "amount": 2000,
+      "player_id": 6,
+      "round_id": 1,
       "id": 3
     }
   ]

@@ -4,6 +4,11 @@ import { PlayerContext } from "../providers/PlayerProvider"
 import "../css/GamePlay.css"
 import { ChainContext } from "../providers/ChainProvider"
 import { PlayerBankContext } from "../providers/PlayerBankProvider"
+import CheckIcon from '@material-ui/icons/Check';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import ClearIcon from '@material-ui/icons/Clear';
+import { green } from '@material-ui/core/colors';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 
 
@@ -136,15 +141,15 @@ export const GamePlay = () => {
                             setBankCounter(bankCounter += 1)
                             correctCounter()
                             next()
-                        }}>CORRECT</button>
+                        }}><CheckIcon color="primary" /></button>
                         <button onClick={() => {
                             setBankCounter(bankCounter = 1)
                             wrongCounter()
                             next()
-                        }}>incorrect</button>
+                        }}><ClearIcon color="secondary"/></button>
                     </div>
                     <div className="bankButton">
-                        <button onClick={bankMoney}>BANK</button>
+                        <button onClick={bankMoney}><MonetizationOnIcon style={{color: green[500] }} /></button>
                     </div>
             </div>
             <div className="chain">
@@ -152,7 +157,7 @@ export const GamePlay = () => {
                             currentChain.map(c => {
                                 return <div className="chainColumn">
                                     <p>${c.amt}</p>
-                                    <p hidden={c.step !== bankCounter}>arrow</p>
+                                    <p hidden={c.step !== bankCounter}><ArrowBackIcon color="primary"/></p>
                                     </div>
                             }).reverse()
                         }
